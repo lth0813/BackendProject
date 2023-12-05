@@ -1,0 +1,41 @@
+
+.wrapperheadcontent-wrapper {
+    display:flex;
+    justify-content: right;
+    align-items: center;
+    height:20px;
+    font-size: 12px;
+}
+.wrapperheadcontent-toBlogHome a {
+    font-size: 12px;
+    margin-right:10px;
+}
+.wrapperheadcontent-login {
+    margin-left:5px;
+}
+
+.wrapperheadcontent-login a button {
+    font-size: 12px;
+    margin-right:10px;
+    cursor: pointer;
+    background-color: gray;
+    color:white;
+    border:none;
+    height:20px;
+    border-radius: 5px;
+}
+.wrapperheadcontent-login a button:hover {
+    color:lightgray;
+}
+
+.wrapperheadcontent-toBlogHome a, .wrapperheadcontent-login a {
+    text-decoration: none;
+}
+
+.wrapperheadcontent-toBlogHome a:hover {
+    text-decoration: underline;
+}
+
+.wrapperheadcontent-toBlogHome a:visited {
+    color:black;
+}

@@ -1,0 +1,152 @@
+body {
+  margin:0 auto;
+  position:relative;
+  z-index: 1;
+}
+body::after {
+  margin:0 auto;
+  width:100%;
+  height:100%;
+  background-image:url('../images/BodyBgImage.jpg');
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  z-index: -1;
+  opacity: 0.7;
+}
+.blog-wrapper {
+  width:1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:0 auto;
+  position:relative;
+}
+.blog-wrapperHead {
+  width:100%;
+  height:30px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.blog-wrappernHeadContent {
+  width:30%;
+  height:20px;
+  margin-right: 10px;
+  display:flex;
+  justify-content: right;
+  align-items: center;
+}
+.blog-container {
+  display:flex;
+  flex-direction: column;
+  width:100%;
+}
+
+.blog-containerHeader {
+  height:200px;
+  width:100%;
+  display:flex;
+  align-items: center;
+  background-image:url('../images/HeaderBackgroundImage.jpg');
+  background-size:300px;
+  margin-bottom:20px;
+  border:dotted 2px black;
+  cursor: pointer;
+}
+.blog-containerHeaderTitle {
+  font-size: 30px;
+  margin-left:50px;
+  font-weight: bold;
+  color:dimgray;
+}
+
+.blog-containerMain {
+  display:flex;
+}
+.blog-containerSidebar {
+  width:200px;
+  display:flex;
+  flex-direction: column;
+}
+.blog-sidebarProfile {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.blog-sidebarList {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.blog-sidebarRecentReply {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.blog-containerBox {
+  width:800px;
+  display:flex;
+  flex-direction: column;
+}
+.blog-containerContent {
+  width:100%;
+  display:flex;
+  flex-direction: column;
+}
+.blog-contentNotice {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.blog-contentContent {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:10px 0 10px 0;
+}
+.blog-containerFooter {
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.blog-emptySpace {
+  height:120px;
+}
+.blog-Footer {
+  width:100%;
+  height:30px;
+  position:fixed;
+  bottom:0;
+  background-color: #333;
+  color: white;
+  padding: 1em;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.allcount {
+  color:gray;
+  font-size: 14px;
+  font-weight: normal;
+}
+.pagination span {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.pages {
+  width:30px;
+  height:30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page {
+  text-decoration: none;
+  color:black;
+}

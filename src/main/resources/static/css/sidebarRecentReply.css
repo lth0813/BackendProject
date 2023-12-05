@@ -1,0 +1,48 @@
+.sidebarRecentReply-wrapper {
+    width:200px;
+    display:flex;
+    flex-direction: column;
+}
+.sidebarRecentReply-wrapper a, .sidebarRecentReply-wrapper a:visited {
+    color:black;
+    text-decoration: none;
+}
+.sidebarRecentReply-wrapper a:hover {
+    color:gray;
+    text-decoration: underline;
+}
+.sidebarRecentReply-desc {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:35px;
+    border:1px solid skyblue;
+    border-radius: 20px;
+    background-color: skyblue;
+    color:white;
+    margin:5px;
+    margin-top:10px;
+}
+.sidebarRecentReply-seeAll {
+    height:30px;
+    display:flex;
+    align-items: center;
+    margin:5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.sidebarRecentReply-smallList {
+    padding-left: 20px;
+    display:flex;
+    align-items: center;
+    margin:5px;
+    font-size:13px;
+}
+.sidebarRecentReply-line {
+    height:10px;
+    margin-bottom: 10px;
+    margin-right:10px;
+    margin-left:10px;
+    border-bottom: dashed 1px gray;
+}

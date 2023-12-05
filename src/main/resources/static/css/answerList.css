@@ -1,0 +1,74 @@
+.answerList-wrapper {
+    display:flex;
+    flex-direction: column;
+    width:750px;
+    margin:0 auto;
+}
+.answerList-noanswer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-top: dashed 1px gray;
+    padding-top: 5px;
+    margin-bottom: 5px;
+}
+.answerList-answer {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.answerList-writer {
+    font-weight: bold;
+    font-size: 16px;
+}
+.answerList-content {
+    font-size: 15px;
+    margin:10px;
+}
+.answerList-date {
+    text-align: right;
+    margin-right:10px;
+    font-size:15px;
+    color:gray;
+    border-bottom: dashed 1px gray;
+}
+.answerList-newanswer {
+    display: flex;
+    justify-content: right;
+    margin:5px;
+    padding-bottom: 10px;
+}
+
+.answerList-newanswer button {
+    color:white;
+    background-color: dimgray;
+    border:none;
+    width:80px;
+    height:30px;
+    border-radius: 5px;
+    margin-left:10px;
+    margin-top:10px;
+    cursor: pointer;
+}
+.answerList-newanswer button:hover, .answerList-newanswer button a:hover {
+    color:lightgray;
+}
+
+.answerList-buttons {
+    display:flex;
+    justify-content: right;
+    margin-top:5px;
+}
+.answerList-buttons div button{
+    margin-right:10px;
+    color:white;
+    background-color: dimgray;
+    width:50px;
+    height:30px;
+    border-radius: 10px;
+    border:none;
+    cursor: pointer;
+}
+.answerList-buttons div button:hover {
+    color:lightgray;
+}

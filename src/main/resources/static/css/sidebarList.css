@@ -1,0 +1,136 @@
+.sidebarList-wrapper {
+    width:200px;
+    display:flex;
+    flex-direction: column;
+}
+.sidebarList-wrapper a, .sidebarList-wrapper a:visited {
+    color:black;
+    text-decoration: none;
+}
+.sidebarList-wrapper a:hover {
+    color:gray;
+    text-decoration: underline;
+}
+.sidebarList-desc {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:35px;
+    border:1px solid skyblue;
+    border-radius: 20px;
+    background-color: skyblue;
+    color:white;
+    margin:5px;
+    margin-top:10px;
+}
+.sidebarList-seeAll {
+    height:30px;
+    display:flex;
+    align-items: center;
+    margin:5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.sidebarList-notice {
+    padding-left: 10px;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    margin:5px;
+    font-size:14px;
+    cursor: pointer;
+    padding-bottom:5px;
+    border-bottom: dashed 1px gray;
+}
+.sidebarList-bigList {
+    padding-left: 10px;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    margin:5px;
+    font-size:14px;
+}
+.bigtopic {
+    cursor: pointer;
+}
+.sidebarList-bigListUpdate, .sidebarList-smallListUpdate {
+    cursor: pointer;
+}
+.sidebarList-bigListbutton, .sidebarList-smallListbutton {
+    display:none;
+    justify-content: right;
+}
+.sidebarList-bigListbutton div, .sidebarList-smallListbutton div {
+    margin-right:10px;
+    font-size:12px;
+}
+.sidebarList-bigListInsert {
+    font-size:12px;
+    text-align: center;
+    cursor: pointer;
+}
+.sidebarList-smallListInsert {
+    display:none;
+    font-size:12px;
+    justify-content: center;
+    cursor: pointer;
+    margin-top:5px;
+}
+.sidebarList-smallList {
+    padding-left: 10px;
+    height:20px;
+    display:none;
+    align-items: center;
+    margin:5px 5px 0px 5px;
+    font-size:13px;
+}
+.sidebarList-line {
+    height:10px;
+    margin-bottom: 10px;
+    margin-right:10px;
+    margin-left:10px;
+    border-bottom: dashed 1px gray;
+}
+.insertbigtopic-wrapper, .insertsmalltopic-wrapper {
+    display:none;
+    justify-content: center;
+}
+.insertbigtopic-typetopic input, .insertsmalltopic-typetopic input {
+    width:180px;
+    height:20px;
+    border-radius: 5px;
+}
+.insertbigtopic-submitbutton, .insertsmalltopic-submitbutton {
+    display:none;
+}
+.updatebigtopic-wrapper, .updatesmalltopic-wrapper {
+    display:none;
+    justify-content: center;
+}
+.updatebigtopic-typetopic input, .updatesmalltopic-typetopic input {
+    width:180px;
+    height:20px;
+    border-radius: 5px;
+}
+.updatebigtopic-submitbutton, .updatesmalltopic-submitbutton {
+    display:none;
+}
+.makeline {
+    padding-bottom: 3px;
+    border-bottom: dashed 1px gray;
+}
+
+.bigtopic:hover ~ .sidebarList-bigListbutton, .sidebarList-bigListbutton:hover {
+    display:flex;
+}
+.sidebarList-smallList:hover + .updatesmalltopic-wrapper + .sidebarList-smallListbutton, .sidebarList-smallListbutton:hover {
+    display:flex;
+}
+.btcnt {
+    color:gray;
+    font-size: 12px;
+}
+.stcnt {
+    color:gray;
+    font-size:11px;
+}

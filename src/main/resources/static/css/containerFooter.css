@@ -1,0 +1,79 @@
+.containerFooter-wrapper {
+    height:100%;
+    width:800px;
+    display:flex;
+    flex-direction: column;
+}
+.containerFooter-main {
+    margin:10px;
+    padding-left: 5px;
+    font-weight: bold;
+    font-size:18px;
+}
+.containerFooter-desc {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:10px;
+    border-bottom: dashed 1px gray;
+}
+.containerFooter-boardList {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:10px;
+    padding-bottom: 5px;
+    border-bottom: dashed 1px gray;
+}
+.containerFooter-descTitle, .containerFooter-boardTitle {
+    width:650px;
+    padding-left: 5px;
+    font-size:15px;
+}
+.containerFooter-descDate, .containerFooter-boardDate, .containerFooter-searchcount, .containerFooter-boardSC {
+    width:100px;
+    text-align: center;
+    font-size:15px;
+    color:gray;
+}
+.containerFooter-boardTitle a, .containerFooter-boardTitle a:visited {
+    color:black;
+    text-decoration: none;
+}
+.containerFooter-boardTitle a:hover {
+    text-decoration: underline;
+}
+.containerFooter-boardTitle a span {
+    color:red;
+}
+.containerFooter-insertbutton {
+    display: flex;
+    justify-content: right;
+}
+.containerFooter-insertbutton a {
+    display: flex;
+    justify-content: right;
+}
+.containerFooter-newdoc {
+    width:100px;
+    height:30px;
+    margin-right:10px;
+    margin-top:5px;
+    background-color: dimgray;
+    border:none;
+    border-radius: 20px;
+    font-size:14px;
+}
+.containerFooter-insertbutton a button {
+    color:white;
+    cursor: pointer;
+}
+.containerFooter-insertbutton a:hover button {
+    color:lightgray;
+    text-decoration: none;
+}
+.gray {
+    color:gray;
+    font-size: 16px;
+}
+

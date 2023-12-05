@@ -1,0 +1,18 @@
+<html>
+    <head></head>
+    <body>
+        <div class="pwcheck">[[${pwcheck}]]</div>
+        <div class="pw">[[${pw}]]</div>
+    </body>
+    <script>
+        const pwcheck = document.querySelector(".pwcheck");
+        if (pwcheck.innerHTML == "no") {
+            alert("입력하신 정보가 올바르지 않습니다.")
+            location.href = "/findpw"
+        } else {
+            const pw = document.querySelector(".pw");
+            alert("회원님의 비밀번호는 "+pw.innerHTML+" 입니다.")
+            location.href = "/login"
+        }
+    </script>
+</html>

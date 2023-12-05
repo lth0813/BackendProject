@@ -1,0 +1,73 @@
+.boardContent-wrapper {
+    width:800px;
+    display:flex;
+    flex-direction: column;
+    padding:20px;
+}
+.boardContent-title {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size:24px;
+    padding: 10px 0px 10px 0px;
+    border-top:dashed 1px gray;
+    border-bottom:dashed 1px gray;
+}
+.boardContent-date {
+    height:30px;
+    display:flex;
+    justify-content: right;
+    align-items: center;
+    padding-right:10px;
+    font-size: 15px;
+    color:gray;
+}
+.boardContent-content {
+    display:flex;
+    font-size: 16px;
+    padding:5px;
+    border-bottom:dashed 1px gray;
+}
+.boardContent-buttons {
+    height:50px;
+    display:flex;
+    justify-content: right;
+    align-items: center;
+}
+.boardContent-buttons a {
+    margin-right:10px;
+}
+.boardContent-buttons a button:hover {
+    color:red;
+}
+.boardContent-buttons a button {
+    width:80px;
+    height:25px;
+    border-radius: 10px;
+    border:none;
+    background-color: dimgray;
+    color:white;
+    cursor: pointer;
+}
+.boardContent-image img {
+    width:400px;
+    height:400px;
+}
+.boardContent-download {
+    display:flex;
+    justify-content: right;
+    margin-right:10px;
+}
+.boardContent-download a button {
+    color:white;
+    background-color: dimgray;
+    cursor: pointer;
+    width:80px;
+    height:25px;
+    border-radius: 10px;
+    border:none;
+}
+.boardContent-download a button:hover {
+    color:lightgray;
+}

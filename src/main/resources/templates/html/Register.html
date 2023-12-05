@@ -1,0 +1,72 @@
+<html>
+    <haed>
+        <link rel="stylesheet" href="/css/register.css">
+    </haed>
+    <body>
+        <div class="wrapper">
+            <div class="loginTitle">
+                <div>KEPCO A : BLOG</div>
+                <div class="regmsg"> - 신규 가입을 환영합니다! - </div>
+            </div>
+            <div class="regContent">
+                <form method="post" class="registerform">
+                    <div class="typeid">
+                        <div class="row">아이디 :&nbsp;</div> 
+                        <input class="id" type="text" name="id" maxlength=20 placeholder="영문과 숫자 최대 20자" pattern="[A-Za-z0-9]+" title="영어와 숫자 조합만 가능합니다.">
+                    </div>
+                    <div class="typepassword">
+                        <div class="row">비밀번호 :&nbsp;</div>
+                        <input class="pw" type="password" name="pw" maxlength=20 placeholder="영문과 숫자 최대 20자" pattern="[A-Za-z0-9]+" title="영어와 숫자 조합만 가능합니다.">
+                    </div>
+                    <div class="typename">
+                        <div class="row">이름 :&nbsp;</div>
+                        <input class="name" type="text" name="name" maxlength=20>
+                    </div>
+                    <div class="typeemail">
+                        <div class="row">e-mail :&nbsp;</div>
+                        <input class="email" type="email" name="email" maxlength=50>
+                    </div>
+                    <div class="typephonenum">
+                        <div class="row">전화번호 :&nbsp;</div>
+                        <input class="phonenum" type="text" name="phonenum" maxlength=11 placeholder="'-'를 제외한 번호만 입력해주세요">
+                    </div>
+                    <div class="button">
+                        <button type="submit">회원가입</button>
+                        <a href="/login"><button type="button">취소</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+<script>
+    const form = document.querySelector(".registerform");
+    const id = document.querySelector(".id");
+    const pw = document.querySelector(".pw");
+    const names = document.querySelector(".name");
+    const email = document.querySelector(".email");
+    const phonenum = document.querySelector(".phonenum")
+    form.addEventListener('submit', (e) => {
+        if (id.value == "") {
+            alert("아이디는 공백일 수 없습니다!");
+            e.preventDefault();
+            id.focus();
+        } else if (pw.value == "") {
+            alert("비밀번호는 공백일 수 없습니다!");
+            e.preventDefault();
+            pw.focus();
+        } else if (names.value == "") {
+            alert("이름은 공백일 수 없습니다!");
+            e.preventDefault();
+            names.focus();
+        } else if (email.value == "") {
+            alert("이메일 주소는 공백일 수 없습니다!");
+            e.preventDefault();
+            email.focus();
+        } else if (phonenum.value =="") {
+            alert("전화번호는 공백일 수 없습니다!");
+            e.preventDefault();
+            phonenum.focus();
+        }
+    })
+</script>
+</html>

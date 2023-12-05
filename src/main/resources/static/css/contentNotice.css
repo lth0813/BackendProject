@@ -1,0 +1,38 @@
+.contentNotice-wrapper {
+    width:800px;
+    display:flex;
+    flex-direction: column;
+}
+.contentNotice-noticeList {
+    display:flex;
+    align-items: center;
+    margin:5px;
+}
+.contentNotice-notice {
+    width:50px;
+    text-align: center;
+    color:red;
+    font-weight: bold;
+    font-size:15px;
+}
+.contentNotice-noticeTitle {
+    width:650px;
+    padding-left: 5px;
+    font-size:15px;
+}
+.contentNotice-noticeDate {
+    width:100px;
+    text-align: center;
+    font-size:15px;
+    color:gray;
+}
+.contentNotice-noticeTitle a, .contentNotice-noticeTitle a:visited {
+    color:black;
+    text-decoration: none;
+}
+.contentNotice-noticeTitle a:hover {
+    text-decoration: underline;
+}
+.red {
+    color:red;
+}

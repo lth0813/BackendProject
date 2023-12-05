@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/blog.css">
+    <link rel="stylesheet" href="./css/boardContent.css">
+    <link rel="stylesheet" href="./css/containerFooter.css">
+    <link rel="stylesheet" href="./css/contentContent.css">
+    <link rel="stylesheet" href="./css/contentNotice.css">
+    <link rel="stylesheet" href="./css/sidebarList.css">
+    <link rel="stylesheet" href="./css/sidebarProfile.css">
+    <link rel="stylesheet" href="./css/sidebarRecentReply.css">
+    <link rel="stylesheet" href="./css/wrapperheadcontent.css">
+    <link rel="stylesheet" href="./css/answerinsert.css">
+    <link rel="stylesheet" href="./css/answerupdate.css">
+    <link rel="stylesheet" href="./css/boardUpdate.css">
+    <link rel="stylesheet" href="./css/answerList.css">
+    <script src="./js/blognoticeBoard.js"></script>
+    <title>KEPCO A : Making Blog</title>
+</head>
+<body>
+    <div class="blog-wrapper">
+        <div class="blog-wrapperHead">
+            <div class="blog-wrappernHeadContent">
+                
+                <th:block th:if="${session.user} == null">
+                    <div class="wrapperheadcontent-wrapper">
+                        <div class="wrapperheadcontent-toBlogHome">
+                            <a href="/">블로그 홈</a>
+                        </div>
+                        <div class="wrapperheadcontent-login">
+                            <a onClick="login()"><button type="button">로그인</button></a>
+                        </div>
+                    </div>
+                </th:block>
+                <th:block th:if="${session.user} != null">
+                    <div class="wrapperheadcontent-wrapper">
+                        <div class="wrapperheadcontent-toBlogHome">
+                            <a><strong>[[${session.user.name}]]</strong>님 환영합니다</a>
+                        </div>
+                        <div class="wrapperheadcontent-toBlogHome">
+                            <a href="/">블로그 홈</a>
+                        </div>
+                        <div class="wrapperheadcontent-login">
+                            <a href="/logout"><button type="button">로그아웃</button></a>
+                        </div>
+                    </div>
+                </th:block>
+
+            </div>
+        </div>
+        <div class="blog-container">
+            <div class="blog-containerHeader">
+            <div class="blog-containerHeaderTitle">KEPCO A : Making Blog</div>
+            </div>
+            <div class="blog-containerMain">
+                <div class="blog-containerSidebar">
+                    <div class="blog-sidebarProfile">
+                        <div class="sidebarprofile-wrapper">
+                            <div class="sidebarprofile-profileImage">
+                                <img src="./images/profilepic.png" alt="ProfileImage"></img>
+                            </div>
+                            <div class="sidebarprofile-profileName">임태환(lth0813)</div>
+                            <div class="sidebarprofile-profileContent">KEPCO A반에서 수업을 듣고 있는 학생이 만드는 블로그입니다.<br/><br/>고양이는 귀엽습니다.<br>강아지도 귀엽습니다.<br>토끼는 잘 모르겠습니다.
+                            </div>
+                            <div class="sidebarprofile-seeProfile">
+                                <a class="sidebarproflie-openpopup" onClick="seeProfile()">프로필 보기<span>▶</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-sidebarList">
+                        <div class="sidebarList-wrapper">
+                            <div class="sidebarList-desc">게시판</div>
+                            <div class="sidebarList-seeAll"><a href="/blogboardlist">전체보기<span class="allcount"> ([[${cntall[0].cnt}]])</span></a></div>
+                            <div class="sidebarList-notice"><a href="/noticeboardlist">공지사항<span class="allcount"> ([[${countnotice[0].cnt}]])</span></a></div>
+                            <div class="sidebarList-bigList" th:each ="i : ${cntaforbt}"><span class="bigtopic">[[${i.bigtopic}]] <span class="btcnt">([[${i.cnt}]])</span></span>
+                                <div class="updatebigtopic-wrapper">
+                                    <form th:action="@{/blogbtupdateloading(bigseq=${i.bigseq})}" method="get">
+                                        <input type="hidden" name="bigseq" th:value="${i.bigseq}">
+                                        <div class="updatebigtopic-typetopic">
+                                            <input type="text" name="bigtopic" th:value="${i.bigtopic}">
+                                        </div>
+                                        <div class="updatebigtopic-submitbutton">
+                                            <button type="submit"></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <th:block th:if="${session.user} != null">
+                                    <th:block th:if="${session.user.id == 'lth0813'}">
+                                        <div class="sidebarList-bigListbutton">
+                                            <div class="sidebarList-bigListUpdate"><a>수정</a></div>
+                                            <div class="sidebarList-bigListDelete"><a th:href="@{/blogbtdeleteloading(bigseq=${i.bigseq})}">제거</a></div>
+                                        </div>
+                                    </th:block>
+                                </th:block>
+
+
+                                <th:block th:each="j: ${cntaforst}">
+                                    <th:block th:if="${i.bigseq} == ${j.bigseq}">
+                                        <div class="sidebarList-smallList"><a th:href="@{/smallboardlist(smallseq=${j.smallseq})}"><span class="smalltopic">[[${j.smalltopic}]] <span class="stcnt">([[${j.cnt}]])</span></span></a></div>
+                                        <div class="updatesmalltopic-wrapper">
+                                            <form th:action="@{/blogstupdateloading(smallseq=${j.smallseq})}" method="get">
+                                                <input type="hidden" name="smallseq" th:value="${j.smallseq}">
+                                                <div class="updatesmalltopic-typetopic">
+                                                    <input type="text" name="smalltopic" th:value="${j.smalltopic}">
+                                                </div>
+                                                <div class="updatesmalltopic-submitbutton">
+                                                    <button type="submit"></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        
+                                    <th:block th:if="${session.user != null}">
+                                        <th:block th:if="${session.user.id == 'lth0813'}">
+                                            <div class="sidebarList-smallListbutton">
+                                                <div class="sidebarList-smallListUpdate"><a>수정</a></div>
+                                                <div class="sidebarList-smallListDelete"><a th:href="@{/blogstdeleteloading(smallseq=${j.smallseq})}">제거</a></div>
+                                            </div>
+                                        </th:block>
+                                    </th:block>
+
+                                    </th:block>
+                                </th:block>
+                                <div class="insertsmalltopic-wrapper">
+                                    <form action="/blogstinsertloading" method="get">
+                                        <input type="hidden" name="bigseq" th:value="${i.bigseq}">
+                                        <div class="insertsmalltopic-typetopic">
+                                            <input type="text" name="smalltopic">
+                                        </div>
+                                        <div class="insertsmalltopic-submitbutton">
+                                            <button type="submit"></button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            <th:block th:if="${session.user} != null">    
+                                <th:block th:if="${session.user.id == 'lth0813'}">
+                                    <div class="sidebarList-smallListInsert"><a>소주제 추가</a></div>
+                                </th:block>
+                            </th:block>
+
+                                <div class="makeline"></div>
+                            </div>
+                            <div class="sidebarList-line"></div>
+
+                            <th:block th:if="${session.user} != null">
+                                <th:block th:if="${session.user.id == 'lth0813'}">
+                                    <div class="sidebarList-bigListInsert"><a>주제 추가</a></div>
+                                </th:block>
+                            </th:block>
+
+                            <div class="insertbigtopic-wrapper">
+                                <form action="/blogbtinsertloading" method="get">
+                                    <div class="insertbigtopic-typetopic">
+                                        <input type="text" name="bigtopic">
+                                    </div>
+                                    <div class="insertbigtopic-submitbutton">
+                                        <button type="submit"></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-sidebarRecentReply">
+                        <div class="sidebarRecentReply-wrapper">
+                            <div class="sidebarRecentReply-desc">최근 댓글</div>
+                            <div class="sidebarRecentReply-smallList" th:each = "i : ${answers}"><a th:href="@{/blogboard(seq=${i.seq})}" th:style="'white-space:pre'">[[${i.content}]]</a></div>
+                        </div>
+                    </div>
+                </div>
+<!-- 여기까지는 다 같음 -->
+
+                <div class="blog-containerBox">
+                    <div class="boardContent-wrapper">
+                        <div class="boardContent-title">[[${board[0].title}]]</div>
+                        <div class="boardContent-date">[[${board[0].date}]]</div>
+                        <div class="boardContent-content" th:style="'white-space:pre'">[[${board[0].content}]]</div>
+                        
+                        <th:block th:if="${session.user} != null">
+                            <th:block th:if="${session.user.id} == 'lth0813'">
+                                <div class="boardContent-buttons">
+                                    <a><button class="boardContent-update">수정</button></a>
+                                    <a onClick="deleteBoard()"><button>삭제</button></a>
+                                    <a th:href="@{/noticeboardlist(seq=${board[0].seq})}"><button>목록으로</button></a>
+                                </div>
+                            </th:block>
+                        </th:block>
+                    </div>
+                    
+                    <div class="boardUpdate-wrapper">
+                        <div class="boardUpdate-inserttitle">게시물 수정</div>
+                        <form action="/noticeboardupdate" method="post" class="boardUpdate-form">
+                            <input class="seq" type="hidden" name="seq" th:value="${seq}">
+                            <div class="boardUpdate-col">
+                                <div class="boardUpdate-row">제 목</div>
+                                <input class="boardUpdate-title" type="text" name="title" maxlength="22" th:value="${board[0].title}">
+                            </div>
+                            <div class="boardUpdate-col" id="content">
+                                <textarea class="boardUpdate-content" name="content" style="white-space:pre;">[[${board[0].content}]]</textarea>
+                            </div>
+                            <div class="boardUpdate-savebutton">
+                                <div><button type="submit">저장</button></div>
+                                <div><a><button type="button" class="updatecancelbutton">취소</button></a></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="seq1" style="display:none">[[${seq}]]</div>
+    <div class="blog-emptySpace"></div>
+    <div class="blog-Footer">© 2023 KEPCO A : Making Blog</div>
+</body>
+<script>
+    document.querySelector(".blog-containerHeader").addEventListener("click",() => {
+        location.href = "/";
+    })
+    const seq = document.querySelector(".seq1").innerHTML;
+    function deleteBoard() {
+        if (confirm("정말 삭제하시겠습니까?")) {
+            location.href = "/noticeboarddelete?seq="+seq;
+        }
+    }
+    // 프로필 창 출력
+    function seeProfile() {
+        const left = (document.body.offsetWidth / 2) - (502 / 2)
+        const top = (window.screen.height / 2) - (520 / 2)
+        window.open("profile","profile","width=502, height=520,left="+left+",top="+top)
+    }
+    // 로그인 창 출력
+    function login() {
+        const left = (document.body.offsetWidth / 2) - (600 / 2)
+        const top = (window.screen.height / 2) - (600 / 2)
+        window.open("login","login","width=600, height=600,left="+left+",top="+top)
+    }
+
+</script>
+</html>

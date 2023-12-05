@@ -1,0 +1,38 @@
+.confirm-body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.confirm-wrapper {
+    width:700px;
+    height:150px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:dashed 1px gray;
+    border-radius: 20px;
+}
+.confirm-confirmmsg {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.confirm-confirmbutton a button {
+    width:100px;
+    height:30px;
+    border:none;
+    border-radius: 5px;
+    background-color: dimgray;
+    cursor: pointer;
+}
+.confirm-confirmbutton a button, .confirm-confirmbutton a button:visited {
+    color:white;
+    text-decoration: none;
+}
+.confirm-confirmbutton a button:hover {
+    color:lightgray;
+}
